@@ -1,0 +1,383 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+{% if messages %} {% for message in messages%}
+<div
+  class="alert alert-{{ messages.tags }} alert-dismissible fade show"
+  role="alert"
+  style="margin: 0; z-index: 999; background: linear-gradient(to right, #ED46FD, #5529C5); font-family: Future Bk Bt !important;"
+>
+  <strong>{{ message }}</strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {%endif%}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+<div class="d-flex flex-wrap justify-content-center" id="reg-div2">
+  <div class="form-container2" data-aos="fade-right">
+    <form action="{% url 'Message' %}" method="post">
+      {% csrf_token %}
+      <img src="./static/images/pen.png" alt="" class="pen">
+      <h3 class="text-center">
+        <b class="write-us">WRITE TO US</b>
+      </h3>
+      <div class="form-group">
+        <label for="name"> Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          style=" background: linear-gradient(#ffffff,#ffffff)padding-box,
+  linear-gradient(to right, #ED46FD, #5529C5) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+  background-color: #ffffff;"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          style=" background: linear-gradient(#ffffff,#ffffff)padding-box,
+  linear-gradient(to right, #ED46FD, #5529C5) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+  background-color: #ffffff;"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone no.</label>
+        <input
+          type="Phone"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="Enter your Contact"
+          style=" background: linear-gradient(#ffffff,#ffffff)padding-box,
+  linear-gradient(to right, #ED46FD, #5529C5) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+  background-color: #ffffff;"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="referral">Message</label>
+        <input type="text" class="form-control" id="referral" name="message" placeholder="Write your Message" style=" background: linear-gradient(#ffffff,#ffffff)padding-box,
+        linear-gradient(to right, #ED46FD, #5529C5) border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
+        background-color: #ffffff;" />
+      </div>
+      <div class="submit" style="margin-top: 2.8vw">
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="d-flex flex-column justify-content-center p-2vw"
+    style="gap: 20px"
+  >
+    <div class="text-center name-div" data-aos="fade-left">
+      <h3 class="person">Prajyot Chakre</h3>
+
+      <h5 class="post">Competitions Head</h5>
+
+      <h5 class="post">prajyot.abhyuday@gmail.com</h5>
+
+      <h5 class="post">7448175579</h5>
+    </div>
+    <div class="text-center name-div" data-aos="fade-left">
+      <h3 class="person">Devang Agarwal</h3>
+
+      <h5 class="post">Competitions Head</h5>
+
+      <h5 class="post">devang.abhyuday@gmail.com</h5>
+
+      <h5 class="post">9898558427</h5>
+    </div>
+
+    <div class="text-center name-div" data-aos="fade-left">
+      <h3 class="person">OM Desai</h3>
+    
+      <h5 class="post">Competitions Head</h5>
+    
+      <h5 class="post">desaiom.abhyuday@gmail.com</h5>
+    
+      <h5 class="post">7208303692</h5>
+     </div>
+  </div>
+</div>
+<h3 class="text-center" style="margin-top: 6vw !important;" data-aos="zoom-in-up">
+  <b class="write-us" >FAQs</b>
+</h3>
+<div class="row display-flex justify-content-center faqbg">
+  <div class="col-lg-10 col-sm-12 faq-width" >
+    <div class="accordion" id="accordionExample" >
+      <div class="accordion-item my-5 mx-5" >
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+          Who can participate in Action Plan Competition ?
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Anyone, from students to working professionals across the nation, can participate. For more information, refer to the Rules Section in the Competition Tab.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+          What is the registration fee for the Action Plan?
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            There is NO registration/participation fee.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+          
+          How can I confirm that I have registered successfully?
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            After registering, you will see a page confirming the registration along with a confirmation mail.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingFour">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+          What should be the size of my team?
+          </button>
+        </h2>
+        <div
+          id="collapseFour"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFour"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Your team can consist of 2-4 members.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingFive">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFive"
+            aria-expanded="false"
+            aria-controls="collapseFive"
+          >
+          Where do I register my team?
+          </button>
+        </h2>
+        <div
+          id="collapseFive"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFive"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Your team can consist of 1-4 members.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingSix">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSix"
+            aria-expanded="false"
+            aria-controls="collapseSix"
+          >
+          Where do I register my team?
+          </button>
+        </h2>
+        <div
+          id="collapseSix"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSix"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            The registration confirmation link will include the link to add your team members along with the Questionnaire.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="headingSeven">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven"
+            aria-expanded="false"
+            aria-controls="collapseSeven"
+          >
+          Where do I have to submit the Questionnaire?
+          </button>
+        </h2>
+        <div
+          id="collapseSeven"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSeven"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            The registration confirmation link will include the link to the submission of the Questionnaire
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="heading8">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse8"
+            aria-expanded="false"
+            aria-controls="collapse8"
+          >
+          Can a team consist of people from different colleges?
+          </button>
+        </h2>
+        <div
+          id="collapse8"
+          class="accordion-collapse collapse"
+          aria-labelledby="heading8"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Yes, teams can consist of individuals from different colleges.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="heading9">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse9"
+            aria-expanded="false"
+            aria-controls="collapse9"
+          >
+          Does my Action Plan have to be technology-related?
+          </button>
+        </h2>
+        <div
+          id="collapse9"
+          class="accordion-collapse collapse"
+          aria-labelledby="heading9"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            No, we encourage all entries that can be developed into an Action plan. It must fit into the model of Activism, Not-for-profit (NGO), or Social entrepreneurship.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item my-5 mx-5">
+        <h2 class="accordion-header" id="heading10">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse10"
+            aria-expanded="false"
+            aria-controls="collapse10"
+          >
+          How does a mentoring program work?
+          </button>
+        </h2>
+        <div
+          id="collapse10"
+          class="accordion-collapse collapse"
+          aria-labelledby="heading10"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Mentors are experienced sector-specific experts who provide assistance and guidance to the participants. They will offer suggestions and feedback to help participants develop and refine their model. Participants are not required to have a mentor, although teams are strongly encouraged to take advantage of this opportunity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-div" style="margin-bottom: 7vw !important;" data-aos="zoom-in-up" data-aos-duration="1000">
+  <h5 class=" text-center follow-text" ><b> Follow Us</b></h5>
+  <div class="d-flex " style="    gap: 25px;
+  justify-content: center;">
+    <div class="social-img"><a href="https://instagram.com/iitbombay_abhyuday"><img src="./static/images/i.png" alt=""></a></div>
+    <div class="social-img"><a href="https://youtube.com/@AbhyudayIITBombay"><img src="./static/images/y.png" alt=""></a></div>
+    <div class="social-img"><a href="https://twitter.com/Abhyuday_IITB"><img src="./static/images/twitter.png" alt=""></a></div>
+    <div class="social-img"><a href="https://www.linkedin.com/company/abhyuday-iit-bombay/"><img src="./static/images/l.png" alt=""></a></div>
+    <div class="social-img"><a href="https://www.facebook.com/abhyuday.iitb/"><img src="./static/images/f.png" alt=""></a></div>
+   
+  </div>
+</div>
+
+{% endblock body %}

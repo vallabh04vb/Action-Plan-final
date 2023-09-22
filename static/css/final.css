@@ -1,0 +1,79 @@
+.navbar.bg-body-tertiary {
+    background-color: rgb(255, 255, 255) !important;
+    width: 100% !important;
+    position: fixed !important;
+    /* margin-top: -3.5vw !important; */
+    z-index: 999 !important;
+    margin-top: 0vw !important;
+  
+  }
+  .navbar-expand-lg .navbar-collapse {
+    position: absolute;
+    /* top: 2vw; */
+    right: 5%;
+    color: rgb(255, 255, 255) !important;
+  }
+  #navbarSupportedContent ul li a {
+    color: rgb(0, 0, 0) !important;
+    padding: 5px 5px;
+    margin: 5px 5px;
+  
+    font-size: 150%;
+  }
+  /* .nav-item a{
+    color: black !important;
+  } */
+  #navbarSupportedContent ul li a{   
+    font-family: Futura Bk BT !important;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    position: absolute;
+    right: 5%;
+    color: rgb(255, 255, 255) !important;
+    
+    @media only screen and (max-width: 995px) {
+      top: 80% !important;
+      position: absolute;
+      background-color: rgb(0, 0, 0) !important;
+      z-index: 2 !important;
+      color: white;
+    }
+  }
+  #logo{
+    width: 35vh!important;
+    height: 8vh;
+  }
+/* Style your form and the search container as needed */
+.state-search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.filtered-states {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.filtered-option {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filtered-option:hover {
+  background-color: #f0f0f0;
+}
+.reg-bt{
+  background-color: black !important;
+  border: 2px solid rgb(0, 0, 0);
+}
+#register-word{
+  color: rgb(0, 0, 0) !important;
+}

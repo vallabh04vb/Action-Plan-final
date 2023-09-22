@@ -1,0 +1,256 @@
+{% extends 'base.html' %} {% load static %} {% block body %} {% if messages %}
+{% for message in messages%}
+<div
+  class="alert alert-{{ messages.tags }} alert-dismissible fade show"
+  role="alert"
+  style="
+    margin: 0;
+    z-index: 999;
+    background: linear-gradient(to right, #ed46fd, #5529c5);
+    font-family: Future Bk Bt !important;
+  "
+>
+  <strong>{{ message }}</strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {%endif%}
+<div class="reg-div" style="padding: 8vw" data-aos="fade-up">
+  <h2 class="text-center"><b id="register-word">REGISTER</b></h2>
+  <div class="form-container">
+    <form action="{% url 'Account' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Choose your Track</label>
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          id="track"
+          name="track"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+            padding-bottom: 2px;"
+          placeholder="Choose your Track "  required>
+          <option value="" selected disabled>select your track</option>
+          <option>Social Enterprenurship Track</option>
+          <option>Social Innovation Track</option>
+        
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">Team Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter your Team name"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+            
+          "
+           required
+        />
+      </div>
+      <div class="form-group">
+        <label for="leader">Team Leader Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="leader"
+          name="leader"
+          placeholder="Enter your Name"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+          "
+           required
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone no.</label>
+        <input
+          type="Phone"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="Enter your Contact"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+          "
+           required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+          "
+           required
+        />
+      </div>
+      <div class="form-group">
+        <label for="state">State:</label>
+        <br />
+        <div class="state-search-container">
+          <input
+            type="text"
+            id="state-search"
+            name="stateName"
+            class="state-search"
+            placeholder="Enter your state"
+            style="
+              width: 41.5vw;
+              background: linear-gradient(#ffffff, #ffffff) padding-box,
+                linear-gradient(to right, #ed46fd, #5529c5) border-box;
+              border-radius: 50em;
+              border: 4px solid transparent;
+              background-color: #ffffff;
+            "
+             required
+          />
+          <div
+            id="filtered-states"
+            class="filtered-states"
+            style="color: black !important; border: 3px solid black"
+          ></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input
+          type="text"
+          class="form-control"
+          id="City"
+          name="City"
+          placeholder="Enter your City "
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+          "
+           required
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Profession</label>
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          id="profession"
+          name="profession"
+          placeholder="Enter your Profession"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+            padding-bottom: 2px;"  required>
+          <option value="" selected disabled>select your Profession</option>
+          <option>Student</option>
+          <option>Working</option>
+          <option>Others</option>
+
+        </select>
+      </div>
+     
+      <div class="form-group">
+        <label for="profession">Organisation</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Organisation"
+          name="Organisation"
+          placeholder="Enter your Organisation/ NA if no organisation"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+          "
+           
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">From where did you hear about Action Plan:</label>
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          id="referral"
+          name="referral"
+          style="
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(to right, #ed46fd, #5529c5) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+            padding-bottom: 2px;"  required>
+          <option value="" selected disabled>select</option>
+          <option>Campus Representative
+           
+          
+           
+           
+            </option>
+          <option> Social Media</option>
+          <option> Newspaper/Online Article</option>
+          <option> Previous Year Participant</option>
+          <option> Others</option>
+
+
+          
+
+        </select>
+      </div>
+      
+      <button
+        class="btn btn-black reg-bt"
+        type="submit"
+        style="
+          display: flex;
+          justify-content: center !important;
+          padding: 9px 9px;
+          margin-top: 10px;
+          color: white;
+        "
+      >
+        REGISTER
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock body %}
